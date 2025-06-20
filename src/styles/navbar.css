@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Afacad+Flux:wght@100..1000&family=Big+Shoulders:opsz,wght@10..72,100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gideon+Roman&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Playwrite+GB+S:wght@100..400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900;1,300..900&family=Smooch+Sans:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+.navigator {
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  height: 50rem;
+  color: white;
+}
+.navigator .title {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  border-bottom: 0.05rem solid #999999;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30rem;
+}
+.navigator .title p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.navigator .title img{
+    width: 2rem;
+    height: 2rem;
+}
+.navigator .navlist ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 3rem;
+}
+.navigator .navlist ul li {
+  font-size: 11rem;
+  margin-top: -2rem;
+  text-transform: uppercase;
+  font-family: "Smooch Sans", sans-serif;
+  font-optical-sizing: auto;
+  transition: all 0.2s ease-in-out;
+  font-weight: 600;
+}
+.navigator .navlist ul li:hover {
+  letter-spacing: 0.5rem;
+
+}
+
+.navlist ul li span {
+    position: relative;
+    display: inline-block;
+  }
+
+  .navlist ul li.strike span::after {
+    content: "";
+    position: absolute;
+    bottom: 6rem;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    background-color: rgb(253, 48, 48);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: draw-line 0.4s ease forwards;
+  }
+  
+
+  @keyframes draw-line {
+    to {
+      transform: scaleX(1);
+    }
+  }
+  

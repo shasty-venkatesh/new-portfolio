@@ -1,0 +1,80 @@
+.projectsection1 .section2 {
+  margin-top: -15rem;
+  font-size: 20rem;
+  margin-right: 15rem;
+  height: 22rem;
+  background-color: #111317;
+  letter-spacing: 0.5rem;
+}
+.projectsection1 img {
+  position: absolute;
+  left: 71rem;
+  top: 8rem;
+  width: 15rem;
+  margin: 0;
+}
+.projectsection2 {
+  margin: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 15rem;
+  margin-top: 8rem;
+}
+.projectsection2 .projectheading {
+  font-size: 5rem;
+  text-decoration: none;
+  background-color: black;
+  color: #cdc6be;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  float: left;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.projectsection2 .projectbody {
+  font-size: 1.5rem;
+  color: #303030;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+}
+.projectsection3 {
+  margin: 1rem 0;
+  margin-bottom: 3rem;
+}
+.projectsection3 .projecttitle {
+  margin: 1rem 3rem;
+  font-size: 6rem;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  text-transform: uppercase;
+}
+.projectsection3 .projectlist {
+  border-bottom: 0.1rem solid black;
+  height: 5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  overflow: hidden;
+
+}
+.projectsection3 .projectlist p {
+  margin-top: -0.6rem;
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+}
+.projectsection3 .projectlist ul {
+  list-style: none;
+  margin-top: 0;
+  transition: transform 0.5s ease;
+  margin: 0 ;
+  margin-left: -3rem;
+}
+.projectsection3 .projectlist ul li {
+  display: flex;
+  justify-content: space-between;
+  padding:  1rem;
+  height: 6rem;
+}
+.projectsection3 .projectlist .projectdetail {
+  background-color: #131313;
+  color: #cdc6be;
+}
