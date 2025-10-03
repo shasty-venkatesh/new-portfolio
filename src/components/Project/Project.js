@@ -58,6 +58,18 @@ function Project() {
       year: 2024,
       link: "https://github.com/shasty-venkatesh/greenloop_app",
     },
+    {
+      title: "Next js Project",
+      description: "Hotel Booking Management",
+      year: 2025,
+      link: "https://github.com/shasty-venkatesh/the-wild-oasis",
+    },
+    {
+      title: "Next js Project",
+      description: "Blog website",
+      year: 2025,
+      link: "https://github.com/shasty-venkatesh/thinknest",
+    },
   ];
 
   const handleMouseEnter = (index) => {

@@ -8,6 +8,9 @@ import About2 from "./About2";
 import stampImg from "../../image/stamp.png";
 import me2Img from "../../image/me2.jpg";
 import svceImg from "../../image/svce.jpg";
+import kceImg from "../../image/kce.png";
+import kpr1Img from "../../image/kpr1.png";
+import kpr2Img from "../../image/kpr2.png";
 import Header from "../Header";
 import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const skillButton = useRef("");
   const navigate = useNavigate();
+  const [activeIndex, setActiveIndex] = useState(null);
   const [workData, setWorkData] = useState([
     {
       description: `"Won Special Mention Award at i-Cube 4.0 Hackathon for
@@ -23,37 +27,34 @@ function Home() {
       title:
         "Department of CSE, Sri Venkateswara College of Engineering, Chennai",
       image: svceImg,
-      link: "/",
+      link: "https://drive.google.com/file/d/1i1Sw5kFGnxqEvZCNpyxPgqpfX_NqQscN/view?usp=sharing",
       transformX: -40,
     },
     {
-      description: `"Won Special Mention Award at i-Cube 4.0 Hackathon for
-                AI-powered waste recycling using YOLO, React, Node.js, MongoDB!
-                Incredible teamwork, innovation, and learning! 🚀♻️"`,
+      description: `"Won a 30-hour hackathon at Kongu Engineering College, earning ₹10,000 for creating an 
+      innovative solution under tight deadlines, showcasing creativity and teamwork."`,
       title:
-        "Department of CSE, Sri Venkateswara College of Engineering, Chennai",
-      image: Banner1Img,
-      link: "/",
+        "1st Place Winner – Kongu Engineering College Hackathon | ₹10,000 Cash Prize",
+      image: kceImg,
+      link: "https://drive.google.com/file/d/1eM_fmqUFkDwdefixcsOOD3TGVcG08PDi/view?usp=sharing",
       transformX: -40,
     },
     {
-      description: `"Won Special Mention Award at i-Cube 4.0 Hackathon for
-                AI-powered waste recycling using YOLO, React, Node.js, MongoDB!
-                Incredible teamwork, innovation, and learning! 🚀♻️"`,
-      title:
-        "Department of CSE, Sri Venkateswara College of Engineering, Chennai",
-      image: Banner1Img,
-      link: "/",
+      description: `"Participated in the 24-hour national hackathon ‘VYNFEST’ at KPR Institute of Engineering and Technology, 
+      delivering innovative solutions under tight deadlines."`,
+      title: "24-Hour National Hackathon Participant – VYNFEST",
+      image: kpr1Img,
+      link: "https://drive.google.com/file/d/1eBe_gu4RQpYU7XLwmQaOq2s1V6Onap5L/view?usp=sharing",
       transformX: -40,
     },
     {
-      description: `"Won Special Mention Award at i-Cube 4.0 Hackathon for
-                AI-powered waste recycling using YOLO, React, Node.js, MongoDB!
-                Incredible teamwork, innovation, and learning! 🚀♻️"`,
+      description: `"Certificate awarded for 
+      active participation in the "Hack the Horizon – 24 Hour Hackathon" held on March 27–28, 
+      2025, organized by the IEEE CIS at KPR Institute of Engineering and Technology."`,
       title:
-        "Department of CSE, Sri Venkateswara College of Engineering, Chennai",
-      image: Banner1Img,
-      link: "/",
+        "Certificate of Participation – Hack the Horizon 24-Hour Hackathon (2025)",
+      image: kpr2Img,
+      link: "https://drive.google.com/file/d/1tpwYNQN32nAxuRd1-h0vTn8gSuueDkYF/view?usp=sharing",
       transformX: -40,
     },
   ]);
@@ -99,7 +100,13 @@ function Home() {
                   A Featured selection the latest work- of the this year.
                 </p>
                 <p className="para2">
-                  Tip! Scroll down you will find <span>ALL WORK</span> Section.
+                  Tip! Scroll down you will find{" "}
+                  <span>
+                    <a style={{ color: "black" }} href="/project">
+                      ALL WORK
+                    </a>
+                  </span>{" "}
+                  Section.
                 </p>
               </div>
             </li>
@@ -107,7 +114,7 @@ function Home() {
               <Main
                 image={Banner2Img}
                 title="Backend Projects "
-                about="Chess.com Clone, Realtime Device track, Realtime Chat App and many more."
+                about="Developed innovative solutions including hotel booking platforms, OD form generators, portfolio builders, and smart trip checklists."
               />
             </li>
           </ul>
@@ -149,6 +156,8 @@ function Home() {
                 <li>Python</li>
                 <li>MongoDB</li>
                 <li>SQL</li>
+                <li>SupaBase</li>
+                <li>Next js</li>
               </ul>
             </div>
             <div
@@ -171,16 +180,24 @@ function Home() {
             </div>
           </div>
         </section>
+
         <section className="certificate">
           {workData.map((item, index) => {
+            const isActive = index === activeIndex;
             return (
               <div
+                key={index}
                 className="section6"
                 style={{
                   transform: `translateX(${item.transformX * index}rem)`,
+                  position: "relative",
+                  zIndex: isActive ? 100 : 1, // active card comes to front
                 }}
-                onMouseOver={(event) => handleTransform(index, -36, -40)}
-                onMouseOut={(event) => handleTransform(index, -40)}
+                onMouseOver={() => handleTransform(index, -36, -40)}
+                onMouseOut={() => handleTransform(index, -40)}
+                onClick={
+                  () => setActiveIndex(isActive ? null : index) // toggle active card
+                }
               >
                 <div className="achievecard">
                   <p>{item.description}</p>
@@ -188,7 +205,9 @@ function Home() {
                     <img src={item.image} alt="icon" />
                     <div>
                       <h1>{item.title}</h1>
-                      <a href={item.link}>View photo</a>
+                      <a target="_blank" href={item.link}>
+                        View photo
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -201,31 +220,55 @@ function Home() {
           <div className="scrollcontact">
             <ul className="contact">
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
             </ul>
 
             <ul className="contact" aria-hidden="true">
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
               <li>
-                Let's create something together <span>Email me</span>
+                Let's create something together{" "}
+                <span>
+                  <a href="mailto:shastyvenkatesh18@gmail.com">Email me</a>
+                </span>
               </li>
             </ul>
           </div>

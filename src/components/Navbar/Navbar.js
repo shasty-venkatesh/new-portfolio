@@ -9,12 +9,12 @@ function Navbar() {
 
   const handleClick = (index, item) => {
     setActiveIndex(index === activeIndex ? null : index);
-  
+
     setTimeout(() => {
       navigate(item === "Work" ? "/project" : "/");
     }, 600);
   };
-  
+
   const navItems = ["Index", "Work", "Freelancer"];
 
   return (
@@ -22,7 +22,7 @@ function Navbar() {
       <div className="title">
         <p style={{ color: "#1a1a1a" }}>b</p>
         <p>𝔗𝔥𝔢 𝔓𝔞𝔭𝔢𝔯 𝔓𝔬𝔯𝔱𝔣𝔬𝔩𝔦𝔬</p>
-        <img src={crossImg} alt="img" />
+        <img src={crossImg} alt="img" onClick={() => navigate(-1)} />
       </div>
       <div className="navlist">
         <ul>

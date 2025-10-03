@@ -62,9 +62,9 @@
 }
 .banner1 .banner1Title h1 {
   background-color: brown;
-  padding: 0.2rem 0.5rem;
+  padding: 0.1rem 0.5rem;
   border-radius: 0.5rem;
-  height: 1.6rem;
+  height: 2rem;
   margin-top: 1.5rem;
   margin-left: 0.5rem;
   font-weight: 400;
@@ -299,6 +299,9 @@
   width: 33rem;
   height: 20rem;
   padding: 1rem 0rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .section6 .achievecard img {
   width: 10rem;
@@ -322,6 +325,7 @@
 }
 .section6 .achievecard .workauthor h1 {
   font-size: 1.2rem;
+  margin-right:  2rem;
 }
 .section6 .achievecard .workauthor a {
   font-size: 1.2rem;
@@ -355,6 +359,10 @@
   padding: 0 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+}
+.section7 .scrollcontact .contact span a{
+  text-decoration: none;
+   color: #cdc6be;
 }
 
 @keyframes scroll {
